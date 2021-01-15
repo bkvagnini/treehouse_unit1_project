@@ -10,32 +10,37 @@ def main():
     numGuesses = 0
     userGuess = 0
     print("Guess a number between 1 and 20: ")
+    
+#keep asking for user input
     while not found:
 
+#error checking
         try:
-            userGuess = int(input("What's your guess? "))
-            #print(type(userGuess))
-            #print(type(randomNumber))
+            userGuess = int(input("What's your number? "))
+
         except ValueError as e:
             print ("Please supply an integer")
-            #print (e)
+            break
 
+#comparison section
         if userGuess == randomNumber:
             print ("You guessed correctly!")
             found = True
             numGuesses = numGuesses + 1
-            print(numGuesses)
+            #confirmation if correct
+            print("you got it in", numGuesses,"guesses!")
+            print("Thanks for playing my game!")
+           
         elif userGuess > randomNumber:
             print ("Guess lower...")
             numGuesses = numGuesses + 1
-            print(numGuesses)
+            
         else:
             print ("Guess higher...")
             numGuesses = numGuesses + 1
-            print(numGuesses)
+           
 
-    print("you got it in", numGuesses,"guesses!")
-    print("Thanks for playing my game!")
+
 
 #-----------------#
 ### Exceeds expectations:
